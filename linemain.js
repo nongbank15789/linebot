@@ -36,23 +36,28 @@ const handleEvent = async (event) => {
         const spreadsheetId = "1LElQCBlh9v37dUnwzqCaa9fKdd1rtxYsXGHAskfPq6w";
         const getRows = await googleSheets.spreadsheets.values.get({auth, spreadsheetId, range: "stock1"});
 
-        //console.log(getRows.data.values[1][0]);
+        
         const args = event.message.text.trim().split(/ +/g);
         const cmd = args[0].slice(p.length).toLowerCase();    
-        let x, y
-        let z = true;
+        let x, y,pt //x=คำในตาราง y=จำนวน pt=รูป
+        let z = true;//เช็คว่ามีในตารางรึป่าว
 
+        //console.log(getRows.data.values[1][0]);
         for (var i=0;i<getRows.data.values.length; i++){
             if(getRows.data.values[i][0] != cmd) {
-                z=false;
+                z=false; 
             }
         }
 
         for (var i=0;i<getRows.data.values.length; i++){
             if(getRows.data.values[i][0] == cmd) {
-                x = getRows.data.values[i][1]
                 z=true;
-               y = getRows.data.values[i][2] 
+                
+                x = getRows.data.values[i][1]
+                y = getRows.data.values[i][2] 
+                pt = getRows.data.values[i][3]
+               
+
             }
         }
 
@@ -75,7 +80,7 @@ const handleEvent = async (event) => {
         },
         "hero": {
           "type": "image",
-          "url": y,
+          "url": pt,
           "size": "full",
           "aspectRatio": "1.51:1",
           "aspectMode": "fit"
@@ -92,9 +97,24 @@ const handleEvent = async (event) => {
             }
           ]
         },
+        "body": {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "text",
+              "text": y,
+              "align": "center",
+              "contents": []
+            }
+          ]
+        },
         
       }
         }
+
+        
+
         if(z!=true){
             var msg = {"type": "text", "text": "ไม่พบข้อมูลนะ ตัวตึง"}
             return client.replyMessage(event.replyToken, msg)
