@@ -28,7 +28,7 @@ app.post('/webhook', line.middleware(lineConfig), async (req, res) => {
 });
 let p = "$$"
 const handleEvent = async (event) => {
-    if (event.type !== 'message' || event.message.type !== 'text' || !event.message.text.startWith(p)) return null;
+    if (event.type !== 'message' || event.message.type !== 'text' || !event.message.text.startsWith(p)) return null;
     else {
         const authclient = await auth.getClient();
         const googleSheets = google.sheets({version: "v4", auth: authclient });
