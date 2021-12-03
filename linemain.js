@@ -65,51 +65,97 @@ const handleEvent = async (event) => {
       "altText": "this is a flex message",
       "contents": {
         "type": "bubble",
-        "direction": "ltr",
-        "header": {
-          "type": "box",
-          "layout": "vertical",
-          "contents": [
-            {
-              "type": "text",
-              "text": cmd,
-              "align": "center",
-              "contents": []
-            }
-          ]
-        },
         "hero": {
           "type": "image",
           "url": pt,
           "size": "full",
-          "aspectRatio": "1.51:1",
-          "aspectMode": "fit"
+          "aspectRatio": "20:13",
+          "aspectMode": "cover",
+          "action": {
+            "type": "uri",
+            "label": "Action",
+            "uri": "https://linecorp.com"
+          }
         },
         "body": {
           "type": "box",
           "layout": "vertical",
+          "spacing": "md",
+          "action": {
+            "type": "uri",
+            "label": "Action",
+            "uri": "https://linecorp.com"
+          },
           "contents": [
             {
               "type": "text",
-              "text": x,
-              "align": "center",
+              "text": "Brown's Burger",
+              "weight": "bold",
+              "size": "xl",
               "contents": []
+            },
+            {
+              "type": "box",
+              "layout": "vertical",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": x,
+                      "weight": "bold",
+                      "margin": "sm",
+                      "contents": []
+                    },
+                    {
+                      "type": "text",
+                      "text": "บาท",
+                      "size": "sm",
+                      "color": "#AAAAAA",
+                      "align": "end",
+                      "contents": []
+                    }
+                  ]
+                },
+                {
+                  "type": "box",
+                  "layout": "baseline",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "text": y,
+                      "weight": "bold",
+                      "flex": 0,
+                      "margin": "sm",
+                      "contents": []
+                    },
+                    {
+                      "type": "text",
+                      "text": "ชิ้น",
+                      "size": "sm",
+                      "color": "#AAAAAA",
+                      "align": "end",
+                      "contents": []
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
-        "body": {
+        "footer": {
           "type": "box",
           "layout": "vertical",
           "contents": [
             {
-              "type": "text",
-              "text": y,
-              "align": "center",
-              "contents": []
+              "type": "spacer",
+              "size": "xs"
             }
           ]
-        },
-        
+        }
       }
         }
 
