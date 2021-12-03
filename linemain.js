@@ -26,6 +26,7 @@ app.post('/webhook', line.middleware(lineConfig), async (req, res) => {
         res.status(500).end()
     }
 });
+
 let p = "$$"
 const handleEvent = async (event) => {
     if (event.type !== 'message' || event.message.type !== 'text' || !event.message.text.startsWith(p)) return null;
@@ -36,18 +37,19 @@ const handleEvent = async (event) => {
         const getRows = await googleSheets.spreadsheets.values.get({auth, spreadsheetId, range: "stock1"});
 
         //console.log(getRows.data.values[1][0]);
-
+        const args = event.message.text.trim().split(/ +/g);
+        const cmd = args[0].slice(p.length).toLowerCase();    
         let x, y
         let z = true;
 
         for (var i=0;i<getRows.data.values.length; i++){
-            if(getRows.data.values[i][0] != event.message.text) {
+            if(getRows.data.values[i][0] != args[0]) {
                 z=false;
             }
         }
 
         for (var i=0;i<getRows.data.values.length; i++){
-            if(getRows.data.values[i][0] == event.message.text) {
+            if(getRows.data.values[i][0] == args[0]) {
                 x = getRows.data.values[i][1]
                 z=true;
                y = getRows.data.values[i][2] 
@@ -65,7 +67,7 @@ const handleEvent = async (event) => {
           "contents": [
             {
               "type": "text",
-              "text": event.message.text,
+              "text": args[0],
               "align": "center",
               "contents": []
             }
