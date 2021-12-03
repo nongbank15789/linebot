@@ -89,7 +89,7 @@ const handleEvent = async (event) => {
           "contents": [
             {
               "type": "text",
-              "text": "Brown's Burger",
+              "text": cmd,
               "weight": "bold",
               "size": "xl",
               "contents": []
