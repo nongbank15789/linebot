@@ -43,13 +43,13 @@ const handleEvent = async (event) => {
         let z = true;
 
         for (var i=0;i<getRows.data.values.length; i++){
-            if(getRows.data.values[i][0] != args[0]) {
+            if(getRows.data.values[i][0] != cmd) {
                 z=false;
             }
         }
 
         for (var i=0;i<getRows.data.values.length; i++){
-            if(getRows.data.values[i][0] == args[0]) {
+            if(getRows.data.values[i][0] == cmd) {
                 x = getRows.data.values[i][1]
                 z=true;
                y = getRows.data.values[i][2] 
@@ -67,7 +67,7 @@ const handleEvent = async (event) => {
           "contents": [
             {
               "type": "text",
-              "text": args[0],
+              "text": cmd,
               "align": "center",
               "contents": []
             }
