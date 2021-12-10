@@ -162,7 +162,7 @@ const handleEvent = async (event) => {
         
 
         if(z!=true){
-            var msg = {"type": "text", "text": "ไม่พบข้อมูลนะ ตัวตึง"}
+            var msg = {"type": "text", "text": "ไม่พบคำสั่งหรือสินค้า โปรดพิมพ์ $$ตามด้วยชื่อสิ้นค้า เช่น $$เมาส์"}
             return client.replyMessage(event.replyToken, msg)
         }
             return client.replyMessage(event.replyToken, msg)
