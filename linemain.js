@@ -166,7 +166,15 @@ const handleEvent = async (event) => {
     "weight": "bold",
     "size": "xl",
     "flex": 0,
+    "type": "text",
+    "text": getRows.data.values[2][0],
+    "weight": "bold",
+    "size": "xl",
+    "flex": 0,
   }
+  
+    
+  
 
 
         if (cmd == "stock") {
