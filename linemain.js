@@ -162,15 +162,11 @@ const handleEvent = async (event) => {
 
   let checkstock = {
     "type": "text",
-    "text": เคสแป้นเมาส์หูฟังจอmainboard,
+    "text": getRows.data.values[1][0],
     "weight": "bold",
     "size": "xl",
     "flex": 0,
-    
   }
-  
-    
-  
 
 
         if (cmd == "stock") {
