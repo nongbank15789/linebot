@@ -158,9 +158,15 @@ const handleEvent = async (event) => {
         }
       }
         }
+        
   let checkstock = {
     "type": "text",
-    "text": getRows.data.values[1][1],
+    "text": getRows.data.values[0][1],
+    "text": getRows.data.values[0][2],
+    "text": getRows.data.values[0][3],
+    "text": getRows.data.values[0][4],
+    "text": getRows.data.values[0][5],
+    "text": getRows.data.values[0][6],
     "weight": "bold",
     "size": "xl",
     "flex": 0,
