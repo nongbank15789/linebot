@@ -56,8 +56,6 @@ const handleEvent = async (event) => {
                 x = getRows.data.values[i][1]
                 y = getRows.data.values[i][2] 
                 pt = getRows.data.values[i][3]
-               
-
             }
         }
 
@@ -159,12 +157,6 @@ const handleEvent = async (event) => {
       }
         }
 
-        
-
-        if(z!=true){
-            var msg = {"type": "text", "text": "ไม่พบคำสั่งหรือสินค้า โปรดพิมพ์ $$ตามด้วยชื่อสินค้า เช่น $$เมาส์"}
-            return client.replyMessage(event.replyToken, msg)
-        } 
             var msg = {"type": "text", "text": "ไม่พบคำสั่งหรือสินค้า โปรดพิมพ์ $$ตามด้วยชื่อสินค้า เช่น $$เมาส์"}
             return client.replyMessage(event.replyToken, msg)
     }
