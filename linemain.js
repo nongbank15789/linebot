@@ -158,7 +158,12 @@ const handleEvent = async (event) => {
         }
       }
         }
-        
+var name
+    if(name < 7 ){
+      name++
+    }else if(name==7){
+      name=0
+    }
   let checkstock = {
     "type": "text",
     "text": getRows.data.values[1][0],
