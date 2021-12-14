@@ -160,10 +160,10 @@ const handleEvent = async (event) => {
         }
   let checkstock = {
     "type": "text",
-    "text": cmd,
+    "text": getRows.data.values[1][1],
     "weight": "bold",
     "size": "xl",
-    
+    "flex": 0,
   }
 
 
