@@ -44,13 +44,13 @@ const handleEvent = async (event) => {
 
         //console.log(getRows.data.values[1][0]);
         for (var i=0;i<getRows.data.values.length; i++){
-            if(getRows.data.values[i][0] != args[0]) {
+            if(getRows.data.values[i][0] != cmd) {
                 z=false; 
             }
         }
 
         for (var i=0;i<getRows.data.values.length; i++){
-            if(getRows.data.values[i][0] == args[0]) {
+            if(getRows.data.values[i][0] == cmd) {
                 z=true;
                 
                 x = getRows.data.values[i][1]
@@ -158,13 +158,6 @@ const handleEvent = async (event) => {
         }
       }
         }
-
-        
-
-        if(z!=true){
-            var msg = {"type": "text", "text": "ไม่พบคำสั่งหรือสินค้า โปรดพิมพ์ $$ตามด้วยชื่อสินค้า เช่น $$เมาส์"}
-            return client.replyMessage(event.replyToken, msg)
-        } 
             var msg = {"type": "text", "text": "ไม่พบคำสั่งหรือสินค้า โปรดพิมพ์ $$ตามด้วยชื่อสินค้า เช่น $$เมาส์"}
             return client.replyMessage(event.replyToken, msg)
     }
