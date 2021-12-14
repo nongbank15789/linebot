@@ -158,15 +158,36 @@ const handleEvent = async (event) => {
         }
       }
         }
-var name=1
-    if(name < 7 ){
-      name++
-    }else if(name==7){
-      name=1
-    }stop;
+
+
   let checkstock = {
     "type": "text",
-    "text": getRows.data.values[name][0],
+    "text": เคส,
+    "weight": "bold",
+    "size": "xl",
+    "flex": 0,
+    "type": "text",
+    "text": แป้น,
+    "weight": "bold",
+    "size": "xl",
+    "flex": 0,
+    "type": "text",
+    "text": เมาส์,
+    "weight": "bold",
+    "size": "xl",
+    "flex": 0,
+    "type": "text",
+    "text": หูฟัง,
+    "weight": "bold",
+    "size": "xl",
+    "flex": 0,
+    "type": "text",
+    "text": จอ,
+    "weight": "bold",
+    "size": "xl",
+    "flex": 0,
+    "type": "text",
+    "text": mainboard,
     "weight": "bold",
     "size": "xl",
     "flex": 0,
