@@ -160,7 +160,10 @@ const handleEvent = async (event) => {
         }
   let checkstock = {
     "type": "text",
-    "text": "Hello"
+    "text": cmd,
+    "weight": "bold",
+    "size": "xl",
+    
   }
 
 
