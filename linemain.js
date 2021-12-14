@@ -158,7 +158,13 @@ const handleEvent = async (event) => {
         }
       }
         }
+
+        
+
+        if(z!=true){
             var msg = {"type": "text", "text": "ไม่พบคำสั่งหรือสินค้า โปรดพิมพ์ $$ตามด้วยชื่อสินค้า เช่น $$เมาส์"}
+            return client.replyMessage(event.replyToken, msg)
+        }
             return client.replyMessage(event.replyToken, msg)
     }
   }
