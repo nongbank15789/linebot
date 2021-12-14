@@ -166,7 +166,7 @@ var name
     }
   let checkstock = {
     "type": "text",
-    "text": getRows.data.values[1][0],
+    "text": getRows.data.values[name][0],
     "weight": "bold",
     "size": "xl",
     "flex": 0,
