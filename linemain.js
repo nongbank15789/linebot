@@ -164,14 +164,14 @@ const handleEvent = async (event) => {
 
 
         if (cmd == "stock") {
-          var msg = {"type": "text", "text":`stock\n${getRows.data.values[1][1]}\n${getRows.data.values[2][1]}\n${getRows.data.values[3][1]}\n${getRows.data.values[4][1]}\n${getRows.data.values[5][1]}\n${getRows.data.values[6][1]}`}
+          var msg = {"type": "text", "text":`stock\n${getRows.data.values[1][0]}\n${getRows.data.values[2][0]}\n${getRows.data.values[3][0]}\n${getRows.data.values[4][0]}\n${getRows.data.values[5][0]}\n${getRows.data.values[6][0]}`}
             return client.replyMessage(event.replyToken, msg)
       }
 
-        
+
 
         if(z!=true){
-            var msg = {"type": "text", "text": "ไม่พบคำสั่งหรือสินค้า โปรดพิมพ์ $$ตามด้วยชื่อสินค้า เช่น $$เมาส์"}
+            var msg = {"type": "text", "text": "ไม่พบคำสั่งหรือสินค้า โปรดพิมพ์ $$ตามด้วยชื่อสินค้า เช่น $$เมาส์ หรือเช็ครายการสินค้าพิมพ์ $$stock"}
             return client.replyMessage(event.replyToken, msg)
         }
             return client.replyMessage(event.replyToken, msg)
@@ -179,7 +179,7 @@ const handleEvent = async (event) => {
   }
 
   const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+  app.listen(PORT, () => {
    console.log(PORT);
    console.log(`listening on Port ${PORT}`);
 });
