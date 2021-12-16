@@ -165,7 +165,7 @@ const handleEvent = async (event) => {
         }
 
         if (cmd == "stock") {
-          var msg = {"type": "text", "text": stock}
+          var msg = {"type": "text", "text": `stock:\n ${stock}`}
             return client.replyMessage(event.replyToken, msg)
       }
 
