@@ -162,7 +162,7 @@ const handleEvent = async (event) => {
 
   let checkstock = {
     "type": "text",
-    "text": getRows.data.values[1][0],
+    "text": "หูฟัง",
     "weight": "bold",
     "size": "xl",
     "flex": 0,
