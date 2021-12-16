@@ -160,17 +160,12 @@ const handleEvent = async (event) => {
         }
 
 
-  let checkstock = {
-    "type": "text",
-    "text": "หูฟัง",
-    "weight": "bold",
-    "size": "xl",
-    "flex": 0,
-  }
+ 
 
 
         if (cmd == "stock") {
-          return client.replyMessage(event.replyToken, checkstock)
+          var msg = {"type": "text", "text":`stock:\n${getRows.data.values[1]}\n${getRows.data.values[2]}\n${getRows.data.values[3]}`}
+            return client.replyMessage(event.replyToken, msg)
       }
 
         
