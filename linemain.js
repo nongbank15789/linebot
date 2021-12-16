@@ -161,6 +161,7 @@ const handleEvent = async (event) => {
 
         let stock = "";
         for (i=1; i < getRows.data.values.length; i++) {
+            if (i==51) break;
             stock += getRows.data.values[i][0] + "\n";
         }
 
