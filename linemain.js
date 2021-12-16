@@ -159,12 +159,13 @@ const handleEvent = async (event) => {
       }
         }
 
-
- 
-
+        let stock = "";
+        for (i=1; i < getRows.data.values.length; i++) {
+            stock += getRows.data.values[i][0] + "\n";
+        }
 
         if (cmd == "stock") {
-          var msg = {"type": "text", "text":`stock\n${getRows.data.values[1][0]}\n${getRows.data.values[2][0]}\n${getRows.data.values[3][0]}\n${getRows.data.values[4][0]}\n${getRows.data.values[5][0]}\n${getRows.data.values[6][0]}`}
+          var msg = {"type": "text", "text": stock}
             return client.replyMessage(event.replyToken, msg)
       }
 
