@@ -164,7 +164,7 @@ const handleEvent = async (event) => {
 
 
         if (cmd == "stock") {
-          var msg = {"type": "text", "text":`stock:\n${getRows.data.values[1][0]}\n${getRows.data.values[2][0]}\n${getRows.data.values[3][0]}\n${getRows.data.values[4][0]}\n${getRows.data.values[5][0]}\n${getRows.data.values[6][0]}`}
+          var msg = {"type": "text", "text":`stock\n${getRows.data.values[1][1]}\n${getRows.data.values[2][1]}\n${getRows.data.values[3][1]}\n${getRows.data.values[4][1]}\n${getRows.data.values[5][1]}\n${getRows.data.values[6][1]}`}
             return client.replyMessage(event.replyToken, msg)
       }
 
