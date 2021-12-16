@@ -165,14 +165,14 @@ const handleEvent = async (event) => {
         }
 
         if (cmd == "stock") {
-          var msg = {"type": "text", "text": `stock:\n${stock}`}
+            var msg = {"type": "text", "text": `Stock\n${stock}`}
             return client.replyMessage(event.replyToken, msg)
       }
 
 
 
         if(z!=true){
-            var msg = {"type": "text", "text": "ไม่พบคำสั่งหรือสินค้า❌🐱‍💻 โปรดพิมพ์ $$ตามด้วยชื่อสินค้า เช่น $$เมาส์ หรือเช็ครายการสินค้าพิมพ์ $$stock"}
+            var msg = {"type": "text", "text": "ไม่พบคำสั่งหรือสินค้า❌🐱‍💻\nโปรดพิมพ์ $$ตามด้วยชื่อสินค้า เช่น $$เมาส์ หรือเช็ครายการสินค้าพิมพ์ $$stock"}
             return client.replyMessage(event.replyToken, msg)
         }
             return client.replyMessage(event.replyToken, msg)
@@ -183,4 +183,4 @@ const handleEvent = async (event) => {
   app.listen(PORT, () => {
    console.log(PORT);
    console.log(`listening on Port ${PORT}`);
-});
+  });
